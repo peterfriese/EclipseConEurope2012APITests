@@ -6,9 +6,13 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ 
-	ContentTypeTests.class, 
+	CachingTests.class,
+	ContentTypeTests.class,
+	SessionDicriticsTests.class,
+	SessionStructuralTests.class,
+	SessionTimeTests.class,
 	SpeakerDicriticsTests.class,
-	SpeakerStructuralTests.class 
+	SpeakerStructuralTests.class,
 })
 public class AllTests {
 

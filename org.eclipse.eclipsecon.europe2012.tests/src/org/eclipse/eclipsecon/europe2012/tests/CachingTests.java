@@ -4,11 +4,13 @@ import static com.jayway.restassured.RestAssured.expect;
 import static com.jayway.restassured.RestAssured.given;
 import static org.junit.Assert.assertNotNull;
 
+import static org.eclipse.eclipsecon.europe2012.tests.Config.*;
+
 import org.junit.Test;
 
 public class CachingTests {
 
-	private static final String URL = "http://eclipsecon.org/europe2012/json/speakers";
+	private static final String URL = BASE_URL + "/speakers";
 	
 	// In case you'd like to see how a proper implementation operates like, 
 	// uncomment this line (and comment the URL above)

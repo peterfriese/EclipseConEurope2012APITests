@@ -1,8 +1,10 @@
 package org.eclipse.eclipsecon.europe2012.tests;
 
 import static com.jayway.restassured.RestAssured.get;
+import static org.eclipse.eclipsecon.europe2012.tests.Config.BASE_URL;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.startsWith;
 
 import java.util.HashMap;
 
@@ -18,7 +20,7 @@ public class SpeakerDicriticsTests {
 	@BeforeClass
 	public static void fetchSpeakers() {
 		System.out.println("Fetching list of speakers, stand by...");
-		jsonPath = get("http://eclipsecon.org/europe2012/json/speakers").jsonPath();
+		jsonPath = get(BASE_URL + "/speakers").jsonPath();
 	}
 	
 	@Test
@@ -31,5 +33,11 @@ public class SpeakerDicriticsTests {
 	public void testJoerg() {
 		HashMap<String, String> speakerJoerg = jsonPath.get("find { ele -> ele.id == '981'}");
 		assertThat(speakerJoerg.get("fullname"), is("Jörg Lamprecht"));
+	}
+	
+	@Test
+	public void testAurelien() {
+		HashMap<String, String> speakerAurelien = jsonPath.get("find { ele -> ele.id == '12'}");
+		assertThat(speakerAurelien.get("bio"), startsWith("Aurélien"));
 	}
 }

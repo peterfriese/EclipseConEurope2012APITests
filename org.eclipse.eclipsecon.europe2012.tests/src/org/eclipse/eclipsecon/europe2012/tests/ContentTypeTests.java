@@ -2,6 +2,8 @@ package org.eclipse.eclipsecon.europe2012.tests;
 
 import static com.jayway.restassured.RestAssured.given;
 
+import static org.eclipse.eclipsecon.europe2012.tests.Config.*;
+
 import org.junit.Test;
 
 public class ContentTypeTests {
@@ -13,7 +15,7 @@ public class ContentTypeTests {
 		expect().
 			contentType("application/json").
 		when().
-			get("http://eclipsecon.org/europe2012/json/sessions");
+			get(BASE_URL + "/sessions");
 	}
 	
 	@Test
@@ -23,7 +25,7 @@ public class ContentTypeTests {
 		expect().
 			contentType("application/json").
 		when().
-			get("http://eclipsecon.org/europe2012/json/sessions/accepted");
+			get(BASE_URL + "/sessions/accepted");
 	}
 	
 	@Test
@@ -33,7 +35,7 @@ public class ContentTypeTests {
 		expect().
 			contentType("application/json").
 		when().
-			get("http://eclipsecon.org/europe2012/json/speakers");
+			get(BASE_URL + "/speakers");
 	}
 
 }
