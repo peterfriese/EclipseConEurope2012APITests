@@ -8,10 +8,10 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({ 
 	CachingTests.class,
 	ContentTypeTests.class,
-	SessionDicriticsTests.class,
+	SessionDiacriticsTests.class,
 	SessionStructuralTests.class,
 	SessionTimeTests.class,
-	SpeakerDicriticsTests.class,
+	SpeakerDiacriticsTests.class,
 	SpeakerStructuralTests.class,
 })
 public class AllTests {

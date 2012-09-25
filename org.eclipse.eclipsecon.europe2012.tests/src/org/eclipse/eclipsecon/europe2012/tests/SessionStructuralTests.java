@@ -13,20 +13,20 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.junit.Test;
-import static org.eclipse.eclipsecon.europe2012.tests.Config.BASE_URL;
+import static org.eclipse.eclipsecon.europe2012.tests.Config.*;
 
 public class SessionStructuralTests {
 
 	@Test
 	public void testSessionsCollectionIsAnArray() {
-		String json = get(BASE_URL + "/sessions").asString();
+		String json = get(BASE_URL + SESSIONS).asString();
 		Object object = from(json).get();
 		assertThat(object, is(instanceOf(ArrayList.class)));
 	}
 	
 	@Test
 	public void testAllSessionsStructure() {
-		List<HashMap<String, String>> list = get(BASE_URL + "/sessions").jsonPath().getList("");
+		List<HashMap<String, String>> list = get(BASE_URL + SESSIONS).jsonPath().getList("");
 		assertThat(list.size(), is(greaterThan(1)));
 		for (HashMap<String, String> session : list) {
 			if (!((String)session.get("type")).equals("schedule_item")) {

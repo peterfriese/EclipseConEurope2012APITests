@@ -10,7 +10,7 @@ import org.junit.Test;
 
 public class CachingTests {
 
-	private static final String URL = BASE_URL + "/speakers";
+	private static final String URL = BASE_URL + SPEAKERS;
 	
 	// In case you'd like to see how a proper implementation operates like, 
 	// uncomment this line (and comment the URL above)

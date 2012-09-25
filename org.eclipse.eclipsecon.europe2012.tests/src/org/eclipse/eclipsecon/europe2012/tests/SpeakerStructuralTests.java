@@ -13,20 +13,20 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.junit.Test;
-import static org.eclipse.eclipsecon.europe2012.tests.Config.BASE_URL;
+import static org.eclipse.eclipsecon.europe2012.tests.Config.*;
 
 public class SpeakerStructuralTests {
 
 	@Test
 	public void testSpeakersCollectionIsAnArray() {
-		String json = get(BASE_URL + "/speakers").asString();
+		String json = get(BASE_URL + SPEAKERS).asString();
 		Object object = from(json).get();
 		assertThat(object, is(instanceOf(ArrayList.class)));
 	}
 	
 	@Test
 	public void testAllSpeakersStructure() {
-		List<HashMap<String, String>> list = get(BASE_URL + "/speakers").jsonPath().getList("");
+		List<HashMap<String, String>> list = get(BASE_URL + SPEAKERS).jsonPath().getList("");
 		assertThat(list.size(), is(greaterThan(1)));
 		for (HashMap<String, String> speaker : list) {
 			assertThat(speaker, hasKey("id"));

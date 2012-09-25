@@ -13,19 +13,9 @@ public class ContentTypeTests {
 		given().
 			contentType("application/json").
 		expect().
-			contentType("application/json").
+			contentType("application/json; charset=utf-8").
 		when().
-			get(BASE_URL + "/sessions");
-	}
-	
-	@Test
-	public void testProperContentTypeForAcceptedSessions() {
-		given().
-			contentType("application/json").		
-		expect().
-			contentType("application/json").
-		when().
-			get(BASE_URL + "/sessions/accepted");
+			get(BASE_URL + SESSIONS);
 	}
 	
 	@Test
@@ -33,9 +23,9 @@ public class ContentTypeTests {
 		given().
 			contentType("application/json").
 		expect().
-			contentType("application/json").
+			contentType("application/json; charset=utf-8").
 		when().
-			get(BASE_URL + "/speakers");
+			get(BASE_URL + SPEAKERS);
 	}
 
 }

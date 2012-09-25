@@ -1,7 +1,7 @@
 package org.eclipse.eclipsecon.europe2012.tests;
 
 import static com.jayway.restassured.RestAssured.get;
-import static org.eclipse.eclipsecon.europe2012.tests.Config.BASE_URL;
+import static org.eclipse.eclipsecon.europe2012.tests.Config.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
@@ -19,7 +19,7 @@ public class SessionTimeTests {
 	@BeforeClass
 	public static void fetchSessions() {
 		System.out.println("Fetching list of sessions, stand by...");
-		jsonPath = get(BASE_URL + "/sessions").jsonPath();
+		jsonPath = get(BASE_URL + SESSIONS).jsonPath();
 	}
 	
 	@Test
